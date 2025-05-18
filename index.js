@@ -11,13 +11,14 @@ const app = express();
 //dotenv config
 dotenv.config();
 
+app.use(express.json());
+//middlewares
+app.use(cors());
+
 //database config   
 mongoDB();
 
 
-app.use(express.json());
-//middlewares
-app.use(cors());
 
 //routes
 app.use('/api/auth', authRoutes);
